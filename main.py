@@ -29,7 +29,6 @@ class Gist(webapp.RequestHandler):
         owner = self.get_gist_owner(gist)
         if owner == 'drewlesueur':
             code = self.get_gist(gist)
-            self.response.out.write("test")
             compiled = compile(code, '<string>', 'exec')
             exec compiled in {'self':self}
             
